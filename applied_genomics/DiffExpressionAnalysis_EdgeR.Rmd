@@ -1,0 +1,49 @@
+---
+title: "Differential Expression Analysis with EdgeR"
+output: html_document
+---
+
+source("http://www.Bioconductor.org/biocLite.R")
+biocLite("BiocUpgrade")
+biocLite( "ShortRead")
+,	"edgeR")	)
+library(edgeR)
+library(ShortRead)
+
+#get report
+```{r}
+setwd("~/Downloads/Gertz_assignment/fastqs/")
+fqQC = qa(dirPath=".", pattern=".fastq$", type="fastq")
+report(fqQC, type="html", dest="fastqQAreport")
+class(fqQC)
+```
+
+1) Inspect   the	html	output and	determine	what’s	wrong	with	 test1.fastq?		What	would	you	
+do	about	this	issue?
+
+
+```{r}
+
+```
+
+2) Name   an	 alignment	 program	 that	 you	 would	 use	 to	 align	 RNA-seq	 reads?	 	Why	 is	 that	
+aligner	an	appropriate	choice	for	RNA-seq	data?	
+
+3 ) Once  you	have	alignments	to	the	genome,	the	next	step	is	to	determine	how	many	reads	
+map	 to	 each	 gene	 or	 transcript.	 	 Assuming	 you	 have	 an	 aligned	 sam	 file	 named	
+aligned.sam,	 a	 gtf	 file	 named	 genes.gtf,	 and	 want	 to	 generate	 a	 counts	 file	 named	
+genes.cout,	write	 out	 the	 Unix	 command	 you	 would	 run	 to	 generate	 counts	 using	
+HTSeq.		You	can	refer	to	page	1776	of	Anders	et	al.
+
+```{r}
+
+```
+
+4) After  step	14A.vi,	inspect	the	relationship	of	the	samples.		Are	any	of	the	samples	outliers?		
+What	could	explain	the	presence	of	an	outlier sample?
+
+5) After	step	14B.vi,	look	at	tt$table	and	figure	out	the	percent	knockdown	that	was	achieved	
+for	pasilla	(FBgn0261552).		(Hint: logFC	is	log	base	2	of	the	fold	change	in	expression)
+
+6) How	 many	 genes	 are expressed	 differentially	 due	 to	 pasilla	 knockdown	 at a	 False	
+Discovery	Rate	(FDR)	of 5%?		(Hint:	The	first	command	in	step	14B.viii	is	a	good	start)
